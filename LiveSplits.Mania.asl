@@ -18,14 +18,11 @@ update
 		vars.shouldSplit = true;
 	}
 	
+	//Checks to see if the current boss is active
 	if (current.finalBossHealth == 16) {
 		vars.finalSplitReady = true;
 	}
 
-	vars.framecount++; 
-	if (vars.framecount % 30 == 0) {
-
-	}	
 	return true;
 }
 
@@ -45,6 +42,7 @@ split
 		return true;
 	}
 	
+	//Splits when the final boss's health reaches 0 after being active.
 	if (vars.finalSplitReady && current.finalBossHealth == 0) {
 		vars.finalSplitReady = false;
 		vars.shoulSplit = false;
